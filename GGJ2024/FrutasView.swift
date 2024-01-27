@@ -59,21 +59,7 @@ struct FrutasView: View {
                     Spacer()
                     
                     Button{
-                        if controladorDeFrutas.getIsOn() == true {
-                            player1 += 1
-                            
-                            verificarGanhador(score: player1, name: "Vó Ana")
-                            resetarFrutas()
-                            isPaused = 3
-        
-                            
-                        } else {
-                        if player1 > 0 {
-                            player1 -= 1
-                        }
-                            
-                            
-                        }
+                        verificarAperto(score: &player1, playerName: "Vó Ana")
                     } label: {
                         Text(frutaDaRodada)
                             .font(.system(size: 50))
@@ -93,19 +79,7 @@ struct FrutasView: View {
                         .background(.red)
                     Spacer()
                     Button{
-                        if controladorDeFrutas.getIsOn() == true {
-                            player2 += 1
-                            
-                            verificarGanhador(score: player1, name: "Vó Zélia")
-                            resetarFrutas()
-                            isPaused = 3
-                            
-                            
-                        } else {
-                            if player2 > 0 {
-                                player2 -= 1
-                            }
-                        }
+                        verificarAperto(score: &player2, playerName: "Vó Zélia")
                     } label: {
                         Text(frutaDaRodada)
                             .font(.system(size: 50))
@@ -197,13 +171,31 @@ struct FrutasView: View {
         
     }
     
+    private func verificarAperto(score: inout Int, playerName: String){
+        if controladorDeFrutas.getIsOn() == true {
+            score += 1
+            
+            verificarGanhador(score: score, name: playerName)
+            resetarFrutas()
+            isPaused = 3
+            verificarAcerto()
+
+            
+        } else {
+            if score > 0 {
+                score -= 1
+            }
+               
+        }
+    }
+    
     private func resetarFrutas() {
         frutas = []
         frutasAparecer = []
     }
     
     private func atribuirPosicoes() {
-        for index in frutas.indices {
+        for _ in frutas.indices {
             imageOffsets.append(CGPoint(x: .random(in: 0..<screenWidth), y: .random(in: 0..<screenHeight)))
         }
     }
@@ -213,6 +205,10 @@ struct FrutasView: View {
             ganhador = name
             acabou = true
         }
+    }
+    
+    private func verificarAcerto() {
+        SoundManager.instance.playSound(sound: .genericsound)
     }
 }
 

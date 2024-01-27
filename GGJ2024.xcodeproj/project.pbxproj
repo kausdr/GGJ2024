@@ -18,6 +18,7 @@
 		5AE7A6E62B64AA0400A022A6 /* FrutasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE7A6E52B64AA0400A022A6 /* FrutasView.swift */; };
 		A76BFA6E2B659C2D00A16D5C /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76BFA6D2B659C2D00A16D5C /* InstructionsView.swift */; };
 		A76BFA702B659E6100A16D5C /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76BFA6F2B659E6100A16D5C /* CreditsView.swift */; };
+		A76BFA732B65A5B600A16D5C /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76BFA722B65A5B600A16D5C /* SoundManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		5AE7A6E52B64AA0400A022A6 /* FrutasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrutasView.swift; sourceTree = "<group>"; };
 		A76BFA6D2B659C2D00A16D5C /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
 		A76BFA6F2B659E6100A16D5C /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
+		A76BFA722B65A5B600A16D5C /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 		5AE7A6D42B64A56A00A022A6 /* GGJ2024 */ = {
 			isa = PBXGroup;
 			children = (
+				A76BFA712B65A5A800A16D5C /* Managers */,
 				5AE7A6D52B64A56A00A022A6 /* GGJ2024App.swift */,
 				5AE7A6D72B64A56A00A022A6 /* ContentView.swift */,
 				5A8262262B64F70C002862C9 /* WinnerView.swift */,
@@ -86,6 +89,14 @@
 				5AE7A6DC2B64A56B00A022A6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A76BFA712B65A5A800A16D5C /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A76BFA722B65A5B600A16D5C /* SoundManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +178,7 @@
 				A76BFA702B659E6100A16D5C /* CreditsView.swift in Sources */,
 				5AE7A6D62B64A56A00A022A6 /* GGJ2024App.swift in Sources */,
 				5AE7A6E62B64AA0400A022A6 /* FrutasView.swift in Sources */,
+				A76BFA732B65A5B600A16D5C /* SoundManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +312,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GGJ2024/Preview Content\"";
-				DEVELOPMENT_TEAM = N5DJJCAK38;
+				DEVELOPMENT_TEAM = U6ZXY7569L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -329,7 +341,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GGJ2024/Preview Content\"";
-				DEVELOPMENT_TEAM = N5DJJCAK38;
+				DEVELOPMENT_TEAM = U6ZXY7569L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
