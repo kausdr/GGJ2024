@@ -20,7 +20,7 @@ struct ContentView: View {
                 Text("Instruções")
             }
             
-            NavigationLink(destination: EmptyView()){
+            NavigationLink(destination: CreditsView()){
                 Text("Créditos")
             }
         }

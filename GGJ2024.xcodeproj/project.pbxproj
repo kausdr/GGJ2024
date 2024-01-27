@@ -17,6 +17,7 @@
 		5AE7A6E42B64A9FB00A022A6 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE7A6E32B64A9FB00A022A6 /* BackgroundView.swift */; };
 		5AE7A6E62B64AA0400A022A6 /* FrutasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE7A6E52B64AA0400A022A6 /* FrutasView.swift */; };
 		A76BFA6E2B659C2D00A16D5C /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76BFA6D2B659C2D00A16D5C /* InstructionsView.swift */; };
+		A76BFA702B659E6100A16D5C /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76BFA6F2B659E6100A16D5C /* CreditsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		5AE7A6E32B64A9FB00A022A6 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		5AE7A6E52B64AA0400A022A6 /* FrutasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrutasView.swift; sourceTree = "<group>"; };
 		A76BFA6D2B659C2D00A16D5C /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
+		A76BFA6F2B659E6100A16D5C /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,9 +72,10 @@
 				5AE7A6E32B64A9FB00A022A6 /* BackgroundView.swift */,
 				5AE7A6E52B64AA0400A022A6 /* FrutasView.swift */,
 				5A82621C2B64B7B2002862C9 /* controladorDeFrutas.swift */,
+				A76BFA6D2B659C2D00A16D5C /* InstructionsView.swift */,
+				A76BFA6F2B659E6100A16D5C /* CreditsView.swift */,
 				5AE7A6D92B64A56B00A022A6 /* Assets.xcassets */,
 				5AE7A6DB2B64A56B00A022A6 /* Preview Content */,
-				A76BFA6D2B659C2D00A16D5C /* InstructionsView.swift */,
 			);
 			path = GGJ2024;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				5A82621D2B64B7B2002862C9 /* controladorDeFrutas.swift in Sources */,
 				5AE7A6E42B64A9FB00A022A6 /* BackgroundView.swift in Sources */,
 				5AE7A6D82B64A56A00A022A6 /* ContentView.swift in Sources */,
+				A76BFA702B659E6100A16D5C /* CreditsView.swift in Sources */,
 				5AE7A6D62B64A56A00A022A6 /* GGJ2024App.swift in Sources */,
 				5AE7A6E62B64AA0400A022A6 /* FrutasView.swift in Sources */,
 			);
