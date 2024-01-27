@@ -16,10 +16,10 @@ struct FrutasView: View {
     @State private var imageOffsets: [CGPoint] = []
     @State private var showingOverlay = true
     
-    let screenWidth = UIScreen.main.bounds.width
+    let screenWidth = UIScreen.main.bounds.width-400
     let screenHeight = UIScreen.main.bounds.height
     
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    let timer = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
     
     @State var frutaDaRodada: String = ""
     @State var reset = false
@@ -28,6 +28,8 @@ struct FrutasView: View {
     @State var player2 = 0
     
     var body: some View {
+        
+        
         ZStack {
             
             ForEach(frutasAparecer.indices, id: \.self) { index in
@@ -35,7 +37,7 @@ struct FrutasView: View {
                     Text("\(frutasAparecer[index])")
                         .font(.system(size: 50))
                         .opacity(1)
-                        .position(
+                        .offset(
                             x: imageOffsets[index].x,
                             y: imageOffsets[index].y
                         )
@@ -43,50 +45,75 @@ struct FrutasView: View {
             }
             
             HStack {
-                Button{
-                    if controladorDeFrutas.getIsOn() == true {
-                        print("jogador 1 wind")
-                        player1 += 1
-                        reset = true
-                        print("pontos jogador 1: \(player1)")
-                        
-                    } else {
-                        print("jogador 1 lose")
+                
+                VStack {
+                    Text("Player 1: \(player1)")
+                        .background(.red)
+                    Spacer()
+                    Button{
+                        if controladorDeFrutas.getIsOn() == true {
+                            print("jogador 1 wind")
+                            player1 += 1
+                            reset = true
+                            print("pontos jogador 1: \(player1)")
+                            
+                        } else {
+                            print("jogador 1 lose")
+                            if player1 > 0 {
+                                player1 -= 1
+                            }
+                            
+                            
+                        }
+                    } label: {
+                        Text(frutaDaRodada)
+                            .font(.system(size: 50))
+                            .frame(width: 100, height: 100)
+                            .background(.red)
+                            .cornerRadius(50)
                     }
-                } label: {
-                    Text(frutaDaRodada)
+                    Spacer()
                 }
-                .frame(width: 100, height: 100)
-                .background(.red)
-                .cornerRadius(50)
+                
                 
                 Spacer()
                 
-                Button{
-                    if controladorDeFrutas.getIsOn() == true {
-                        print("jogador 2 wind")
-                        player2 += 1
-                        reset = true
-                        
-                        print("pontos jogador 2: \(player2)")
-                        
-                    } else {
-                        print("jogador 2 lose")
+                VStack {
+                    Text("Player 2: \(player2)")
+                        .background(.red)
+                    Spacer()
+                    Button{
+                        if controladorDeFrutas.getIsOn() == true {
+                            print("jogador 2 wind")
+                            player2 += 1
+                            reset = true
+                            
+                            print("pontos jogador 2: \(player2)")
+                            
+                        } else {
+                            print("jogador 2 lose")
+                            if player2 > 0 {
+                                player2 -= 1
+                            }
+                        }
+                    } label: {
+                        Text(frutaDaRodada)
+                            .font(.system(size: 50))
+                            .frame(width: 100, height: 100)
+                            .background(.red)
+                            .cornerRadius(50)
                     }
-                } label: {
-                    Text(frutaDaRodada)
+                    Spacer()
                 }
-                .frame(width: 100, height: 100)
-                .background(.red)
-                .cornerRadius(50)
+                
+                
                 
             }
-            
-            
         }
         .onChange(of: reset){
             print("mudou")
             if reset == true {
+                controladorDeFrutas.setIsOn(on: false)
                 frutas = []
                 frutasAparecer = []
                 
@@ -107,22 +134,24 @@ struct FrutasView: View {
             controladorDeFrutas.embaralharFrutas()
             frutas = controladorDeFrutas.getBaralhoDeFrutas()
             for index in frutas.indices {
-                imageOffsets.append(CGPoint(x: .random(in: 0..<screenWidth), y: .random(in: 0..<screenHeight)))
+                imageOffsets.append(CGPoint(x: .random(in: (-screenWidth/2+30) ..< screenWidth/2-30), y: .random(in: (-screenHeight/2+30) ..< screenHeight/2-30)))
             }
             
             frutaDaRodada = controladorDeFrutas.getFruta()
+            print(screenWidth)
         }
         
         .onReceive(timer) { _ in
-            
-            let fruta = frutas.popLast()
-            
             if !frutas.isEmpty {
-                frutasAparecer.append(fruta ?? "")
-            }
-            
-            if fruta == controladorDeFrutas.getFruta(){
-                controladorDeFrutas.setIsOn(on: true)
+                let fruta = frutas.popLast()
+                
+                
+                    frutasAparecer.append(fruta ?? "")
+                
+                
+                if fruta == controladorDeFrutas.getFruta(){
+                    controladorDeFrutas.setIsOn(on: true)
+                }
             }
         }
         

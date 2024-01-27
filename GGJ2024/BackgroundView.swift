@@ -13,11 +13,11 @@ struct BackgroundView: View {
             Text("background com a pombaaa")
             Image("praca")
                 .resizable()
-                .aspectRatio(contentMode: .fill)
+//                .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
             Image("pombo")
                 .resizable()
-                .aspectRatio(contentMode: .fill)
+//                .aspectRatio(contentMode: .fill)
                 .padding(48)
             
         }

@@ -15,9 +15,7 @@ struct ContentView: View {
         ZStack {
             BackgroundView()
             FrutasView()
-//            BotoesView()
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.blue)
         .onAppear() {
             controladorDeFrutas.selecionarFrutaDaRodada()
