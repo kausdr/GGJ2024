@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var controladorDeFrutas: ControladorDeFrutas
+    
     var body: some View {
         ZStack {
             BackgroundView()
@@ -16,9 +19,14 @@ struct ContentView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.blue)
+        .onAppear() {
+            controladorDeFrutas.selecionarFrutaDaRodada()
+            controladorDeFrutas.embaralharFrutas()
+        }
     }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(ControladorDeFrutas())
 }
