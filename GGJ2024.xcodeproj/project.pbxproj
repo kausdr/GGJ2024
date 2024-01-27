@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A82621D2B64B7B2002862C9 /* controladorDeFrutas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A82621C2B64B7B2002862C9 /* controladorDeFrutas.swift */; };
 		5AE7A6D62B64A56A00A022A6 /* GGJ2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE7A6D52B64A56A00A022A6 /* GGJ2024App.swift */; };
 		5AE7A6D82B64A56A00A022A6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE7A6D72B64A56A00A022A6 /* ContentView.swift */; };
 		5AE7A6DA2B64A56B00A022A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AE7A6D92B64A56B00A022A6 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A82621C2B64B7B2002862C9 /* controladorDeFrutas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = controladorDeFrutas.swift; sourceTree = "<group>"; };
 		5AE7A6D22B64A56A00A022A6 /* GGJ2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GGJ2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE7A6D52B64A56A00A022A6 /* GGJ2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GGJ2024App.swift; sourceTree = "<group>"; };
 		5AE7A6D72B64A56A00A022A6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				5AE7A6E32B64A9FB00A022A6 /* BackgroundView.swift */,
 				5AE7A6E52B64AA0400A022A6 /* FrutasView.swift */,
 				5AE7A6E72B64AA0900A022A6 /* BotoesView.swift */,
+				5A82621C2B64B7B2002862C9 /* controladorDeFrutas.swift */,
 				5AE7A6D92B64A56B00A022A6 /* Assets.xcassets */,
 				5AE7A6DB2B64A56B00A022A6 /* Preview Content */,
 			);
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AE7A6E82B64AA0900A022A6 /* BotoesView.swift in Sources */,
+				5A82621D2B64B7B2002862C9 /* controladorDeFrutas.swift in Sources */,
 				5AE7A6E42B64A9FB00A022A6 /* BackgroundView.swift in Sources */,
 				5AE7A6D82B64A56A00A022A6 /* ContentView.swift in Sources */,
 				5AE7A6D62B64A56A00A022A6 /* GGJ2024App.swift in Sources */,
