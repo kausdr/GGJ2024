@@ -23,6 +23,8 @@ class ControladorDeFrutas: ObservableObject {
         baralhoDeFrutas = frutas.filter{ $0 != frutaDaRodada }
         baralhoDeFrutas = baralhoDeFrutas.flatMap{[$0, $0]}
         baralhoDeFrutas.append(frutaDaRodada)
+        
+        baralhoDeFrutas.shuffle()
         print(baralhoDeFrutas)
     }
     
