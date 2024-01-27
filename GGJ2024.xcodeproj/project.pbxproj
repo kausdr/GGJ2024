@@ -16,6 +16,7 @@
 		5AE7A6DD2B64A56B00A022A6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AE7A6DC2B64A56B00A022A6 /* Preview Assets.xcassets */; };
 		5AE7A6E42B64A9FB00A022A6 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE7A6E32B64A9FB00A022A6 /* BackgroundView.swift */; };
 		5AE7A6E62B64AA0400A022A6 /* FrutasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE7A6E52B64AA0400A022A6 /* FrutasView.swift */; };
+		A76BFA6E2B659C2D00A16D5C /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76BFA6D2B659C2D00A16D5C /* InstructionsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		5AE7A6DC2B64A56B00A022A6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5AE7A6E32B64A9FB00A022A6 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		5AE7A6E52B64AA0400A022A6 /* FrutasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrutasView.swift; sourceTree = "<group>"; };
+		A76BFA6D2B659C2D00A16D5C /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				5A82621C2B64B7B2002862C9 /* controladorDeFrutas.swift */,
 				5AE7A6D92B64A56B00A022A6 /* Assets.xcassets */,
 				5AE7A6DB2B64A56B00A022A6 /* Preview Content */,
+				A76BFA6D2B659C2D00A16D5C /* InstructionsView.swift */,
 			);
 			path = GGJ2024;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A8262252B64F5C7002862C9 /* GameplayView.swift in Sources */,
+				A76BFA6E2B659C2D00A16D5C /* InstructionsView.swift in Sources */,
 				5A8262272B64F70C002862C9 /* WinnerView.swift in Sources */,
 				5A82621D2B64B7B2002862C9 /* controladorDeFrutas.swift in Sources */,
 				5AE7A6E42B64A9FB00A022A6 /* BackgroundView.swift in Sources */,

@@ -16,6 +16,10 @@ struct ContentView: View {
                 Text("Jogar")
             }
             
+            NavigationLink(destination: InstructionsView()){
+                Text("Instruções")
+            }
+            
             NavigationLink(destination: EmptyView()){
                 Text("Créditos")
             }
