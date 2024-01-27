@@ -15,7 +15,7 @@ struct ContentView: View {
         ZStack {
             BackgroundView()
             FrutasView()
-            BotoesView()
+//            BotoesView()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.blue)
