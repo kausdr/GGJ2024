@@ -208,7 +208,7 @@ struct FrutasView: View {
     }
     
     private func verificarAcerto() {
-        SoundManager.instance.playSound(sound: .genericsound)
+        SoundManager.instance.playSound(sound: .pruu)
     }
 }
 
