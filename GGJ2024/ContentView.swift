@@ -9,24 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @EnvironmentObject var controladorDeFrutas: ControladorDeFrutas
     
     var body: some View {
-        ZStack {
-            BackgroundView()
-            FrutasView()
-            BotoesView()
+        NavigationStack{
+            NavigationLink(destination: GameplayView()){
+                Text("Jogar")
+            }
+            
+            NavigationLink(destination: EmptyView()){
+                Text("Créditos")
+            }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(.blue)
-        .onAppear() {
-            controladorDeFrutas.selecionarFrutaDaRodada()
-            controladorDeFrutas.embaralharFrutas()
-        }
+        
     }
 }
 
 #Preview {
     ContentView()
-        .environmentObject(ControladorDeFrutas())
 }
