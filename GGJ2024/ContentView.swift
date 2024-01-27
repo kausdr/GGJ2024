@@ -9,11 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var path: [Int] = []
     
     var body: some View {
         NavigationStack{
-            NavigationLink(destination: GameplayView(path:$path)){
+            NavigationLink(destination: GameplayView()){
                 Text("Jogar")
             }
             

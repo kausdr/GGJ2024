@@ -10,13 +10,11 @@ import SwiftUI
 struct GameplayView: View {
     @EnvironmentObject var controladorDeFrutas: ControladorDeFrutas
     
-    @Binding var path: [Int]
-    
     var body: some View {
         NavigationStack{
             ZStack {
                 BackgroundView()
-                FrutasView(path:$path)
+                FrutasView()
             }
             .background(.blue)
             .onAppear() {

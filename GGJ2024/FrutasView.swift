@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FrutasView: View {
+    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var controladorDeFrutas: ControladorDeFrutas
     
     @State var frutas : [String] = []
@@ -30,15 +31,15 @@ struct FrutasView: View {
     @State var acabou = false
     @State var ganhador = ""
     
-    @Binding var path: [Int]
+    
     
     var body: some View {
         
         
         ZStack {
-            NavigationLink(destination: WinnerView(ganhador: ganhador, path:$path), isActive: $acabou) {
-                EmptyView()
-            }
+//            NavigationLink(destination: WinnerView(ganhador: ganhador), isActive: $acabou) {
+//                EmptyView()
+//            }
             
             ForEach(frutasAparecer.indices, id: \.self) { index in
                 ZStack {
@@ -128,6 +129,29 @@ struct FrutasView: View {
                 
                 
             }
+            
+            Rectangle()
+                .fill(.black)
+                .frame(
+                    maxWidth: .infinity,
+                    maxHeight: .infinity
+                )
+                .opacity(acabou == true ? 0.5 : 0)
+            
+            
+            if acabou == true {
+                VStack{
+                    Text("\(ganhador) ganhou!!! ihulll")
+                    Button{
+                        dismiss()
+                    } label: {
+                        Text("Voltar ao inicio")
+                    }
+                }
+                .padding(40)
+                .background(.red)
+                .cornerRadius(30)
+            }
         }
         .onChange(of: reset){
             print("mudou")
@@ -161,7 +185,7 @@ struct FrutasView: View {
         }
         
         .onReceive(timer) { _ in
-            if !frutas.isEmpty {
+            if !frutas.isEmpty && acabou == false {
                 let fruta = frutas.popLast()
                 
                 
