@@ -11,13 +11,14 @@ struct BotoesView: View {
     
     @EnvironmentObject var controladorDeFrutas: ControladorDeFrutas
     
-    @State var frutaDaRodada: String = ""
+    @State var frutaDaRodada: String = "" 
     
     var body: some View {
         HStack {
             Button{
                 if controladorDeFrutas.getIsOn() == true {
                     print("jogador 1 wind")
+                    controladorDeFrutas.resetTime = true
                 } else {
                     print("jogador 1 lose")
                 }
@@ -33,6 +34,8 @@ struct BotoesView: View {
             Button{
                 if controladorDeFrutas.getIsOn() == true {
                     print("jogador 2 wind")
+                    controladorDeFrutas.resetTime = true
+                    
                 } else {
                     print("jogador 2 lose")
                 }
@@ -43,6 +46,12 @@ struct BotoesView: View {
             .background(.red)
             .cornerRadius(50)
             
+        }
+        .onChange(of: controladorDeFrutas.resetTime){
+            if controladorDeFrutas.resetTime == true {
+                print("mudou botoes")
+                frutaDaRodada = controladorDeFrutas.getFruta()
+            }
         }
         .onAppear{
             frutaDaRodada = controladorDeFrutas.getFruta()

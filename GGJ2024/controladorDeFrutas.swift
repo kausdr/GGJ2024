@@ -8,6 +8,7 @@
 import Foundation
 
 class ControladorDeFrutas: ObservableObject {
+    var resetTime: Bool = false
     private var frutaDaRodada: String = ""
     private var frutaOn: Bool = false
     private let frutas: [String] = ["🍎", "🍌", "🍊", "🍐"]
@@ -27,6 +28,10 @@ class ControladorDeFrutas: ObservableObject {
         
         baralhoDeFrutas.shuffle()
         print(baralhoDeFrutas)
+    }
+    
+    func resetaFrutas () {
+        baralhoDeFrutas = []
     }
     
     func getBaralhoDeFrutas() -> [String] {

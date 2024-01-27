@@ -13,6 +13,12 @@ struct FrutasView: View {
     @State var frutas : [String] = []
     @State var frutasAparecer: [String] = []
     
+    @State private var imageOffsets: [CGPoint] = []
+    @State private var showingOverlay = true
+    
+    let screenWidth = UIScreen.main.bounds.width
+    let screenHeight = UIScreen.main.bounds.height
+    
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
@@ -23,16 +29,38 @@ struct FrutasView: View {
                     Text("\(frutasAparecer[index])")
                         .font(.system(size: 50))
                         .opacity(1)
-                        .offset(x: CGFloat(getX()), y: CGFloat(getY()))
+                        .position(
+                            x: imageOffsets[index].x,
+                            y: imageOffsets[index].y
+                        )
                 }
             }
-
-
+            
+            
+        }
+        .onChange(of: controladorDeFrutas.resetTime){
+            print("mudou")
+            if controladorDeFrutas.resetTime == true {
+                frutas = []
+                frutasAparecer = []
+//                controladorDeFrutas.selecionarFrutaDaRodada()
+//                controladorDeFrutas.embaralharFrutas()
+//                frutas = controladorDeFrutas.getBaralhoDeFrutas()
+//                for index in frutas.indices {
+//                    imageOffsets.append(CGPoint(x: .random(in: 0..<screenWidth), y: .random(in: 0..<screenHeight)))
+//                }
+                
+                
+            }
         }
         .onAppear{
             controladorDeFrutas.embaralharFrutas()
             frutas = controladorDeFrutas.getBaralhoDeFrutas()
+            for index in frutas.indices {
+                imageOffsets.append(CGPoint(x: .random(in: 0..<screenWidth), y: .random(in: 0..<screenHeight)))
+            }
         }
+        
         .onReceive(timer) { _ in
             
             let fruta = frutas.popLast()
@@ -46,14 +74,6 @@ struct FrutasView: View {
             }
         }
         
-    }
-    
-    func getX() -> Int {
-        return Int.random(in: -300...300)
-    }
-    
-    func getY() -> Int {
-        return Int.random(in: -200...200)
     }
 }
 
