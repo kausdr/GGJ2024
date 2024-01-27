@@ -136,6 +136,7 @@ struct FrutasView: View {
                     maxWidth: .infinity,
                     maxHeight: .infinity
                 )
+                .ignoresSafeArea()
                 .opacity(acabou == true ? 0.5 : 0)
             
             

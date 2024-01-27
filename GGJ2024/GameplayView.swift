@@ -16,6 +16,10 @@ struct GameplayView: View {
                 BackgroundView()
                 FrutasView()
             }
+            .frame(
+                maxWidth: .infinity,
+                maxHeight: .infinity
+            )
             .background(.blue)
             .onAppear() {
                 controladorDeFrutas.selecionarFrutaDaRodada()
