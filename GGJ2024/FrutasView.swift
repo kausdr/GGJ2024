@@ -31,15 +31,13 @@ struct FrutasView: View {
     @State var acabou = false
     @State var ganhador = ""
     
+    @State private var isPaused = 0
     
     
     var body: some View {
         
         
         ZStack {
-//            NavigationLink(destination: WinnerView(ganhador: ganhador), isActive: $acabou) {
-//                EmptyView()
-//            }
             
             ForEach(frutasAparecer.indices, id: \.self) { index in
                 ZStack {
@@ -63,17 +61,15 @@ struct FrutasView: View {
                         if controladorDeFrutas.getIsOn() == true {
                             player1 += 1
                             
-                            if player1 >= 3 {
-                                ganhador = "Vó Ana"
-                                acabou = true
-                            }
-                            reset = true
+                            verificarGanhador(score: player1, name: "Vó Ana")
+                            resetarFrutas()
+                            isPaused = 3
         
                             
                         } else {
-                            if player1 > 0 {
-                                player1 -= 1
-                            }
+                        if player1 > 0 {
+                            player1 -= 1
+                        }
                             
                             
                         }
@@ -83,6 +79,7 @@ struct FrutasView: View {
                             .frame(width: 100, height: 100)
                             .background(.red)
                             .cornerRadius(50)
+                            .opacity(isPaused != 0 ? 0.5 : 1)
                     }
                     Spacer()
                 }
@@ -98,12 +95,9 @@ struct FrutasView: View {
                         if controladorDeFrutas.getIsOn() == true {
                             player2 += 1
                             
-                            if player2 >= 3 {
-                                ganhador = "Vó Zélia"
-                                acabou = true
-                            }
-                            
-                            reset = true
+                            verificarGanhador(score: player1, name: "Vó Zélia")
+                            resetarFrutas()
+                            isPaused = 3
                             
                             
                         } else {
@@ -117,12 +111,11 @@ struct FrutasView: View {
                             .frame(width: 100, height: 100)
                             .background(.red)
                             .cornerRadius(50)
+                            .opacity(isPaused != 0 ? 0.5 : 1)
                     }
                     Spacer()
                 }
-                
-                
-                
+                         
             }
             
             Rectangle()
@@ -150,10 +143,9 @@ struct FrutasView: View {
             }
         }
         .onChange(of: reset){
-            if reset == true {
+            
+            if reset == true && isPaused == 0 {
                 controladorDeFrutas.setIsOn(on: false)
-                frutas = []
-                frutasAparecer = []
                 
                 controladorDeFrutas.selecionarFrutaDaRodada()
                 frutaDaRodada = controladorDeFrutas.getFruta()
@@ -161,12 +153,11 @@ struct FrutasView: View {
                 controladorDeFrutas.embaralharFrutas()
                 frutas = controladorDeFrutas.getBaralhoDeFrutas()
                 
-                for index in frutas.indices {
-                    imageOffsets.append(CGPoint(x: .random(in: 0..<screenWidth), y: .random(in: 0..<screenHeight)))
-                }
+                atribuirPosicoes()
                 
-                reset = false
+                reset.toggle()
             }
+            
         }
         .onAppear{
             controladorDeFrutas.embaralharFrutas()
@@ -179,19 +170,45 @@ struct FrutasView: View {
         }
         
         .onReceive(timer) { _ in
-            if !frutas.isEmpty && acabou == false {
-                let fruta = frutas.popLast()
-                
-                
+            
+            if isPaused == 0 {
+                if !frutas.isEmpty && acabou == false {
+                    let fruta = frutas.popLast()
+                    
                     frutasAparecer.append(fruta ?? "")
-                
-                
-                if fruta == controladorDeFrutas.getFruta(){
-                    controladorDeFrutas.setIsOn(on: true)
+                    
+                    
+                    if fruta == controladorDeFrutas.getFruta(){
+                        controladorDeFrutas.setIsOn(on: true)
+                    }
                 }
+            } else {
+                isPaused-=1
+                
+                if isPaused == 0 { reset = true }
             }
         }
         
+        
+        
+    }
+    
+    private func resetarFrutas() {
+        frutas = []
+        frutasAparecer = []
+    }
+    
+    private func atribuirPosicoes() {
+        for index in frutas.indices {
+            imageOffsets.append(CGPoint(x: .random(in: 0..<screenWidth), y: .random(in: 0..<screenHeight)))
+        }
+    }
+    
+    private func verificarGanhador(score: Int, name: String) {
+        if score >= 3 {
+            ganhador = name
+            acabou = true
+        }
     }
 }
 
