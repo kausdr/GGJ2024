@@ -21,6 +21,12 @@ struct FrutasView: View {
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
+    @State var frutaDaRodada: String = ""
+    @State var reset = false
+    
+    @State var player1 = 0
+    @State var player2 = 0
+    
     var body: some View {
         ZStack {
             
@@ -36,21 +42,65 @@ struct FrutasView: View {
                 }
             }
             
+            HStack {
+                Button{
+                    if controladorDeFrutas.getIsOn() == true {
+                        print("jogador 1 wind")
+                        player1 += 1
+                        reset = true
+                        print("pontos jogador 1: \(player1)")
+                        
+                    } else {
+                        print("jogador 1 lose")
+                    }
+                } label: {
+                    Text(frutaDaRodada)
+                }
+                .frame(width: 100, height: 100)
+                .background(.red)
+                .cornerRadius(50)
+                
+                Spacer()
+                
+                Button{
+                    if controladorDeFrutas.getIsOn() == true {
+                        print("jogador 2 wind")
+                        player2 += 1
+                        reset = true
+                        
+                        print("pontos jogador 2: \(player2)")
+                        
+                    } else {
+                        print("jogador 2 lose")
+                    }
+                } label: {
+                    Text(frutaDaRodada)
+                }
+                .frame(width: 100, height: 100)
+                .background(.red)
+                .cornerRadius(50)
+                
+            }
+            
             
         }
-        .onChange(of: controladorDeFrutas.resetTime){
+        .onChange(of: reset){
             print("mudou")
-            if controladorDeFrutas.resetTime == true {
+            if reset == true {
                 frutas = []
                 frutasAparecer = []
-//                controladorDeFrutas.selecionarFrutaDaRodada()
-//                controladorDeFrutas.embaralharFrutas()
-//                frutas = controladorDeFrutas.getBaralhoDeFrutas()
-//                for index in frutas.indices {
-//                    imageOffsets.append(CGPoint(x: .random(in: 0..<screenWidth), y: .random(in: 0..<screenHeight)))
-//                }
                 
+                controladorDeFrutas.selecionarFrutaDaRodada()
+                frutaDaRodada = controladorDeFrutas.getFruta()
                 
+                controladorDeFrutas.embaralharFrutas()
+                frutas = controladorDeFrutas.getBaralhoDeFrutas()
+                
+                for index in frutas.indices {
+                    imageOffsets.append(CGPoint(x: .random(in: 0..<screenWidth), y: .random(in: 0..<screenHeight)))
+                }
+                
+                reset = false
             }
         }
         .onAppear{
@@ -59,6 +109,8 @@ struct FrutasView: View {
             for index in frutas.indices {
                 imageOffsets.append(CGPoint(x: .random(in: 0..<screenWidth), y: .random(in: 0..<screenHeight)))
             }
+            
+            frutaDaRodada = controladorDeFrutas.getFruta()
         }
         
         .onReceive(timer) { _ in
