@@ -9,10 +9,28 @@ import SwiftUI
 
 struct BotoesView: View {
     var body: some View {
-        VStack {
-            Text("Botoes pra clicarr")
+        HStack {
+            Button{
+                
+            } label: {
+                Text("UVA")
+            }
+            .frame(width: 100, height: 100)
+            .background(.red)
+            .cornerRadius(50)
+            
+            Spacer()
+            
+            Button{
+                
+            } label: {
+                Text("UVA")
+            }
+            .frame(width: 100, height: 100)
+            .background(.red)
+            .cornerRadius(50)
+            
         }
-        .background(.red)
     }
 }
 
