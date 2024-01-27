@@ -10,20 +10,50 @@ import SwiftUI
 struct FrutasView: View {
     @EnvironmentObject var controladorDeFrutas: ControladorDeFrutas
     
-    var frutas: [String] = ["🍎", "🍌", "🍊", "🍐"]
+    @State var frutas : [String] = []
+    @State var frutasAparecer: [String] = []
+    
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
     var body: some View {
         ZStack {
-            Text("🍎")
-                .offset(x:100, y:100)
-            Text("🍌")
-                .offset(x:123, y:-30)
-            Text("🍊")
-                .offset(x:-54, y:-5)
-            Text("🍐")
-                .offset(x:-94, y:-80)
             
+            ForEach(frutasAparecer.indices, id: \.self) { index in
+                ZStack {
+                    Text("\(frutasAparecer[index])")
+                        .font(.system(size: 50))
+                        .opacity(1)
+                        .offset(x: CGFloat(getX()), y: CGFloat(getY()))
+                }
+            }
+
+
+        }
+        .onAppear{
+            controladorDeFrutas.embaralharFrutas()
+            frutas = controladorDeFrutas.getBaralhoDeFrutas()
+        }
+        .onReceive(timer) { _ in
+            
+            let fruta = frutas.popLast()
+            
+            if !frutas.isEmpty {
+                frutasAparecer.append(fruta ?? "")
+            }
+            
+            if fruta == controladorDeFrutas.getFruta(){
+                controladorDeFrutas.setIsOn(on: true)
+            }
         }
         
+    }
+    
+    func getX() -> Int {
+        return Int.random(in: -300...300)
+    }
+    
+    func getY() -> Int {
+        return Int.random(in: -200...200)
     }
 }
 

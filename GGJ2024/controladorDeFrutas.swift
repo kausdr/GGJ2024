@@ -9,6 +9,7 @@ import Foundation
 
 class ControladorDeFrutas: ObservableObject {
     private var frutaDaRodada: String = ""
+    private var frutaOn: Bool = false
     private let frutas: [String] = ["🍎", "🍌", "🍊", "🍐"]
     private var baralhoDeFrutas: [String] = []
     
@@ -21,7 +22,7 @@ class ControladorDeFrutas: ObservableObject {
     func embaralharFrutas () {
         baralhoDeFrutas = []
         baralhoDeFrutas = frutas.filter{ $0 != frutaDaRodada }
-        baralhoDeFrutas = baralhoDeFrutas.flatMap{[$0, $0]}
+        baralhoDeFrutas = baralhoDeFrutas.flatMap{[$0, $0, $0, $0]}
         baralhoDeFrutas.append(frutaDaRodada)
         
         baralhoDeFrutas.shuffle()
@@ -34,5 +35,13 @@ class ControladorDeFrutas: ObservableObject {
     
     func getFruta() -> String {
         return frutaDaRodada
+    }
+    
+    func getIsOn() -> Bool {
+        return frutaOn
+    }
+    
+    func setIsOn(on: Bool) {
+        self.frutaOn = on
     }
 }

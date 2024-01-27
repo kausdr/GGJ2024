@@ -16,7 +16,11 @@ struct BotoesView: View {
     var body: some View {
         HStack {
             Button{
-                
+                if controladorDeFrutas.getIsOn() == true {
+                    print("jogador 1 wind")
+                } else {
+                    print("jogador 1 lose")
+                }
             } label: {
                 Text(frutaDaRodada)
             }
@@ -27,7 +31,11 @@ struct BotoesView: View {
             Spacer()
             
             Button{
-                
+                if controladorDeFrutas.getIsOn() == true {
+                    print("jogador 2 wind")
+                } else {
+                    print("jogador 2 lose")
+                }
             } label: {
                 Text(frutaDaRodada)
             }
