@@ -9,8 +9,17 @@ import SwiftUI
 
 struct BackgroundView: View {
     var body: some View {
-        VStack {
+        ZStack {
             Text("background com a pombaaa")
+            Image("praca")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .ignoresSafeArea()
+            Image("pombo")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .padding(48)
+            
         }
     }
 }
