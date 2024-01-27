@@ -173,15 +173,17 @@ struct FrutasView: View {
     
     private func verificarAperto(score: inout Int, playerName: String){
         if controladorDeFrutas.getIsOn() == true {
+            acerto()
             score += 1
             
             verificarGanhador(score: score, name: playerName)
             resetarFrutas()
             isPaused = 3
-            verificarAcerto()
+            
 
             
         } else {
+            erro()
             if score > 0 {
                 score -= 1
             }
@@ -207,8 +209,12 @@ struct FrutasView: View {
         }
     }
     
-    private func verificarAcerto() {
-        SoundManager.instance.playSound(sound: .pruu)
+    private func acerto() {
+        SoundManager.instance.playSound(sound: .FrutaCerta)
+    }
+    
+    private func erro() {
+        SoundManager.instance.playSound(sound: .FrutaErrada)
     }
 }
 

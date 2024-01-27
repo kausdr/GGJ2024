@@ -1,26 +1,30 @@
 import Foundation
+import AVFoundation
 import AVKit
 
-class SoundManager{
+class SoundManager {
+    
     static let instance = SoundManager()
     
-    var player:AVAudioPlayer?
+    var player: AVAudioPlayer?
+    var background: AVAudioPlayer?
     
-    func playSound(sound:SoundOptions){
-        print("aceito")
-        guard let url = Bundle.main.url(forResource: sound.rawValue, withExtension: ".mp3") else {return}
-        do{
-            print("xxx")
+    enum SoundOption: String {
+        case FrutaCerta
+        case FrutaErrada
+    }
+    
+    func playSound(sound: SoundOption) {
+        
+        guard let url = Bundle.main.url(forResource: sound.rawValue, withExtension: ".mp3") else { return }
+        
+        do {
             player = try AVAudioPlayer(contentsOf: url)
             player?.play()
-        }catch let error{
-            print("Error: \(error.localizedDescription)")
+//            player?.volume = volume
+            
+        } catch let error {
+            print("Error playing sound. (error.localizedDescription)")
         }
-        
     }
-}
-
-enum SoundOptions:String,CaseIterable{
-    case pruu
-    case genericsound
 }
