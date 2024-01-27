@@ -61,7 +61,6 @@ struct FrutasView: View {
                     Spacer()
                     Button{
                         if controladorDeFrutas.getIsOn() == true {
-                            print("jogador 1 wind")
                             player1 += 1
                             
                             if player1 >= 3 {
@@ -69,10 +68,9 @@ struct FrutasView: View {
                                 acabou = true
                             }
                             reset = true
-                            print("pontos jogador 1: \(player1)")
+        
                             
                         } else {
-                            print("jogador 1 lose")
                             if player1 > 0 {
                                 player1 -= 1
                             }
@@ -98,7 +96,6 @@ struct FrutasView: View {
                     Spacer()
                     Button{
                         if controladorDeFrutas.getIsOn() == true {
-                            print("jogador 2 wind")
                             player2 += 1
                             
                             if player2 >= 3 {
@@ -108,10 +105,8 @@ struct FrutasView: View {
                             
                             reset = true
                             
-                            print("pontos jogador 2: \(player2)")
                             
                         } else {
-                            print("jogador 2 lose")
                             if player2 > 0 {
                                 player2 -= 1
                             }
@@ -155,7 +150,6 @@ struct FrutasView: View {
             }
         }
         .onChange(of: reset){
-            print("mudou")
             if reset == true {
                 controladorDeFrutas.setIsOn(on: false)
                 frutas = []
@@ -182,7 +176,6 @@ struct FrutasView: View {
             }
             
             frutaDaRodada = controladorDeFrutas.getFruta()
-            print(screenWidth)
         }
         
         .onReceive(timer) { _ in
