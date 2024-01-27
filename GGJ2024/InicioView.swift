@@ -9,16 +9,9 @@ import SwiftUI
 
 struct InicioView: View {
     var body: some View {
-        NavigationStack{
             VStack {
-                NavigationLink {
-                    
-                } label: {
-                    Text("Jogar")
-                }
                 
             }
-        }
     }
 }
 

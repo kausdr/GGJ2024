@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5A82621D2B64B7B2002862C9 /* controladorDeFrutas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A82621C2B64B7B2002862C9 /* controladorDeFrutas.swift */; };
-		5A8262212B64F34C002862C9 /* InicioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8262202B64F34C002862C9 /* InicioView.swift */; };
+		5A8262252B64F5C7002862C9 /* GameplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8262242B64F5C7002862C9 /* GameplayView.swift */; };
+		5A8262272B64F70C002862C9 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8262262B64F70C002862C9 /* WinnerView.swift */; };
 		5AE7A6D62B64A56A00A022A6 /* GGJ2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE7A6D52B64A56A00A022A6 /* GGJ2024App.swift */; };
 		5AE7A6D82B64A56A00A022A6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE7A6D72B64A56A00A022A6 /* ContentView.swift */; };
 		5AE7A6DA2B64A56B00A022A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AE7A6D92B64A56B00A022A6 /* Assets.xcassets */; };
@@ -19,7 +20,8 @@
 
 /* Begin PBXFileReference section */
 		5A82621C2B64B7B2002862C9 /* controladorDeFrutas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = controladorDeFrutas.swift; sourceTree = "<group>"; };
-		5A8262202B64F34C002862C9 /* InicioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioView.swift; sourceTree = "<group>"; };
+		5A8262242B64F5C7002862C9 /* GameplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayView.swift; sourceTree = "<group>"; };
+		5A8262262B64F70C002862C9 /* WinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerView.swift; sourceTree = "<group>"; };
 		5AE7A6D22B64A56A00A022A6 /* GGJ2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GGJ2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE7A6D52B64A56A00A022A6 /* GGJ2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GGJ2024App.swift; sourceTree = "<group>"; };
 		5AE7A6D72B64A56A00A022A6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,7 +63,8 @@
 			children = (
 				5AE7A6D52B64A56A00A022A6 /* GGJ2024App.swift */,
 				5AE7A6D72B64A56A00A022A6 /* ContentView.swift */,
-				5A8262202B64F34C002862C9 /* InicioView.swift */,
+				5A8262262B64F70C002862C9 /* WinnerView.swift */,
+				5A8262242B64F5C7002862C9 /* GameplayView.swift */,
 				5AE7A6E32B64A9FB00A022A6 /* BackgroundView.swift */,
 				5AE7A6E52B64AA0400A022A6 /* FrutasView.swift */,
 				5A82621C2B64B7B2002862C9 /* controladorDeFrutas.swift */,
@@ -149,8 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A8262252B64F5C7002862C9 /* GameplayView.swift in Sources */,
+				5A8262272B64F70C002862C9 /* WinnerView.swift in Sources */,
 				5A82621D2B64B7B2002862C9 /* controladorDeFrutas.swift in Sources */,
-				5A8262212B64F34C002862C9 /* InicioView.swift in Sources */,
 				5AE7A6E42B64A9FB00A022A6 /* BackgroundView.swift in Sources */,
 				5AE7A6D82B64A56A00A022A6 /* ContentView.swift in Sources */,
 				5AE7A6D62B64A56A00A022A6 /* GGJ2024App.swift in Sources */,

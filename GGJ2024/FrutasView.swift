@@ -27,10 +27,18 @@ struct FrutasView: View {
     @State var player1 = 0
     @State var player2 = 0
     
+    @State var acabou = false
+    @State var ganhador = ""
+    
+    @Binding var path: [Int]
+    
     var body: some View {
         
         
         ZStack {
+            NavigationLink(destination: WinnerView(ganhador: ganhador, path:$path), isActive: $acabou) {
+                EmptyView()
+            }
             
             ForEach(frutasAparecer.indices, id: \.self) { index in
                 ZStack {
@@ -54,6 +62,11 @@ struct FrutasView: View {
                         if controladorDeFrutas.getIsOn() == true {
                             print("jogador 1 wind")
                             player1 += 1
+                            
+                            if player1 >= 3 {
+                                ganhador = "Vó Ana"
+                                acabou = true
+                            }
                             reset = true
                             print("pontos jogador 1: \(player1)")
                             
@@ -86,6 +99,12 @@ struct FrutasView: View {
                         if controladorDeFrutas.getIsOn() == true {
                             print("jogador 2 wind")
                             player2 += 1
+                            
+                            if player2 >= 3 {
+                                ganhador = "Vó Zélia"
+                                acabou = true
+                            }
+                            
                             reset = true
                             
                             print("pontos jogador 2: \(player2)")
@@ -158,9 +177,9 @@ struct FrutasView: View {
     }
 }
 
-#Preview {
-    FrutasView()
-        .environmentObject(ControladorDeFrutas())
-}
+//#Preview {
+//    FrutasView()
+//        .environmentObject(ControladorDeFrutas())
+//}
 
 
