@@ -35,8 +35,7 @@ struct FrutasView: View {
     
     
     var body: some View {
-        
-        
+    
         ZStack {
             
             ForEach(frutasAparecer.indices, id: \.self) { index in
@@ -56,7 +55,9 @@ struct FrutasView: View {
                 VStack {
                     Text("Player 1: \(player1)")
                         .background(.red)
+                    
                     Spacer()
+                    
                     Button{
                         if controladorDeFrutas.getIsOn() == true {
                             player1 += 1
@@ -118,17 +119,20 @@ struct FrutasView: View {
                          
             }
             
-            Rectangle()
-                .fill(.black)
-                .frame(
-                    maxWidth: .infinity,
-                    maxHeight: .infinity
-                )
-                .ignoresSafeArea()
-                .opacity(acabou == true ? 0.5 : 0)
+           
             
             
             if acabou == true {
+                
+                Rectangle()
+                    .fill(.black)
+                    .frame(
+                        maxWidth: .infinity,
+                        maxHeight: .infinity
+                    )
+                    .ignoresSafeArea()
+                
+                
                 VStack{
                     Text("\(ganhador) ganhou!!! ihulll")
                     Button{
