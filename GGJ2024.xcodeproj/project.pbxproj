@@ -19,6 +19,7 @@
 		A76BFA6E2B659C2D00A16D5C /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76BFA6D2B659C2D00A16D5C /* InstructionsView.swift */; };
 		A76BFA702B659E6100A16D5C /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76BFA6F2B659E6100A16D5C /* CreditsView.swift */; };
 		A76BFA732B65A5B600A16D5C /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76BFA722B65A5B600A16D5C /* SoundManager.swift */; };
+		A76BFA782B65AF9F00A16D5C /* pruu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A76BFA772B65AF9F00A16D5C /* pruu.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		A76BFA6D2B659C2D00A16D5C /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
 		A76BFA6F2B659E6100A16D5C /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
 		A76BFA722B65A5B600A16D5C /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		A76BFA772B65AF9F00A16D5C /* pruu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pruu.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		5AE7A6D42B64A56A00A022A6 /* GGJ2024 */ = {
 			isa = PBXGroup;
 			children = (
+				A76BFA742B65AF6A00A16D5C /* Sounds */,
 				A76BFA712B65A5A800A16D5C /* Managers */,
 				5AE7A6D52B64A56A00A022A6 /* GGJ2024App.swift */,
 				5AE7A6D72B64A56A00A022A6 /* ContentView.swift */,
@@ -97,6 +100,14 @@
 				A76BFA722B65A5B600A16D5C /* SoundManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		A76BFA742B65AF6A00A16D5C /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				A76BFA772B65AF9F00A16D5C /* pruu.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +170,7 @@
 			files = (
 				5AE7A6DD2B64A56B00A022A6 /* Preview Assets.xcassets in Resources */,
 				5AE7A6DA2B64A56B00A022A6 /* Assets.xcassets in Resources */,
+				A76BFA782B65AF9F00A16D5C /* pruu.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
