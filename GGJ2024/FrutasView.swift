@@ -64,9 +64,9 @@ struct FrutasView: View {
             
             Image(currentPigeon)
                 .resizable()
-                .frame(width:204, height: 231)
-                .offset(y: 10)
-//            
+                .frame(width:274, height: 301)
+                .offset(x: -20,y: 15)
+//
 //            
             ForEach(frutasAparecer.indices, id: \.self) { index in
                 ZStack {
@@ -200,7 +200,9 @@ struct FrutasView: View {
             }
         }
         .onAppear{
-            SoundManager.instance.playLoop(sound: .background, volume: 0.1)
+                SoundManager.instance.playLoop(sound: .background, volume: 0.1)
+            
+            
             setupGame()
                 
         }
