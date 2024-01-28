@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct GameplayView: View {
-    @EnvironmentObject var controladorDeFrutas: ControladorDeFrutas
     
     var body: some View {
         NavigationStack{
@@ -20,10 +19,6 @@ struct GameplayView: View {
                 maxWidth: .infinity,
                 maxHeight: .infinity
             )
-            .background(.blue)
-            .onAppear() {
-                SoundManager.instance.playLoop(sound: .background, volume: 0.1)
-            }
         }
         .navigationBarBackButtonHidden()
     }
