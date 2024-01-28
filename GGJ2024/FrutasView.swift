@@ -87,7 +87,7 @@ struct FrutasView: View {
                 ZStack {
                     Image("border_left")
                         .resizable()
-                        .frame(height: 300)
+                        .frame(maxHeight: .infinity)
                         .frame(width: 120)
                         
                     
