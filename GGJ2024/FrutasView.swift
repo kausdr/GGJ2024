@@ -66,53 +66,108 @@ struct FrutasView: View {
                 }
             }
             
-            HStack {
-                
-                VStack {
-                    Text("Player 1: \(player1)")
-                        .background(.red)
+            HStack{
+                ZStack{
+                    Image("border_left")
+                        .resizable()
+                        .frame(
+                            maxHeight: .infinity
+                        )
+                        .frame(
+                            width: 120
+                        )
                     
-                    Spacer()
-                    
-                    Button{
-                        verificarAperto(score: &player1, playerName: "Vó Ana")
-                    } label: {
-                        Image(frutaDaRodada)
-                            .font(.system(size: 50))
-                            .frame(width: 100, height: 100)
-                            .background(.red)
-                            .cornerRadius(50)
+                    VStack{
+                        Spacer()
+                        
+                        Button{
+                            verificarAperto(score: &player1, playerName: "Vó Ana")
+                        } label: {
+                            ZStack{
+                           
+                                Image("senhora_um")
+                                    .scaleEffect(0.8)
+                                ZStack{
+                                    Image("botao_rosa")
+                                        .scaleEffect(0.8)
+                                    Image(frutaDaRodada)
+                                }
+                                .offset(y:83)
+                            }
                             .opacity(isPaused != 0 ? 0.5 : 1)
+                        }
+                        
+                        Spacer()
+                            .frame(height:90)
+                        
+                        VStack(){
+                            Image(player1 >= 3 ? "coracao_rosa" : "coracao_inativo")
+                            Image(player1 >= 2 ? "coracao_rosa" : "coracao_inativo")
+                            Image(player1 >= 1 ? "coracao_rosa" : "coracao_inativo")
+                                
+                        }
+                        
+                        Spacer()
+                        
+                        
                     }
-                    Spacer()
+                    .offset(x: 60)
                 }
-                
                 
                 Spacer()
                 
-                VStack {
-                    Text("Player 2: \(player2)")
-                        .background(.red)
-                    Spacer()
-                    Button{
-                        verificarAperto(score: &player2, playerName: "Vó Zélia")
-                    } label: {
-                        Image(frutaDaRodada)
-                            .font(.system(size: 50))
-                            .frame(width: 100, height: 100)
-                            .background(.red)
-                            .cornerRadius(50)
+                ZStack{
+                    Image("border_left")
+                        .resizable()
+                        .frame(
+                            maxHeight: .infinity
+                        )
+                        .frame(
+                            width: 120
+                        )
+                        . scaleEffect(x: -1, y: 1)
+                    
+                    VStack{
+                        Spacer()
+                        
+                        Button{
+                            verificarAperto(score: &player2, playerName: "Vó Zélia")
+                        } label: {
+                            ZStack{
+                           
+                                Image("senhora_dois")
+                                    .scaleEffect(0.8)
+                                ZStack{
+                                    Image("botao_azul")
+                                        .scaleEffect(0.8)
+                                    Image(frutaDaRodada)
+                                }
+                                .offset(y:83)
+                            }
                             .opacity(isPaused != 0 ? 0.5 : 1)
+                        }
+                        
+                        Spacer()
+                            .frame(height:90)
+                        
+                        VStack(){
+                            Image(player2 >= 3 ? "coracao_azul" : "coracao_inativo")
+                            Image(player2 >= 2 ? "coracao_azul" : "coracao_inativo")
+                            Image(player2 >= 1 ? "coracao_azul" : "coracao_inativo")
+                                
+                        }
+                        
+                        Spacer()
+                        
+                        
                     }
-                    Spacer()
+                    .offset(x: -60)
                 }
-                         
             }
-            
-           
-            
+            .ignoresSafeArea()
             
             if acabou == true {
+                
                 
                 Rectangle()
                     .fill(.black)
@@ -121,6 +176,7 @@ struct FrutasView: View {
                         maxHeight: .infinity
                     )
                     .ignoresSafeArea()
+                    .opacity(0.5)
                 
                 
                 VStack{
@@ -135,6 +191,8 @@ struct FrutasView: View {
                 .background(.red)
                 .cornerRadius(30)
             }
+            
+            
         }
         .onChange(of: reset){
             
@@ -154,9 +212,11 @@ struct FrutasView: View {
             
         }
         .onAppear{
+            controladorDeFrutas.selecionarFrutaDaRodada()
             controladorDeFrutas.embaralharFrutas()
+            
             frutas = controladorDeFrutas.getBaralhoDeFrutas()
-            for index in frutas.indices {
+            for _ in frutas.indices {
                 imageOffsets.append(CGPoint(x: .random(in: (-screenWidth/2+30) ..< screenWidth/2-30), y: .random(in: (-screenHeight/2+30) ..< screenHeight/2-30)))
             }
             
@@ -246,6 +306,7 @@ struct FrutasView: View {
         if score >= 3 {
             ganhador = name
             acabou = true
+            SoundManager.instance.stopSound(sound: .background)
         }
     }
     

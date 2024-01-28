@@ -43,4 +43,13 @@ class SoundManager {
                print("Error playing sound. (error.localizedDescription)")
            }
        }
+    
+    func stopSound(sound: SoundOption) {
+           switch sound {
+           case .background:
+               background?.stop()
+           case .FrutaCerta, .FrutaErrada, .ploc:
+               player?.stop()
+           }
+       }
 }
