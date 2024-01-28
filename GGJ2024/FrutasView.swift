@@ -178,8 +178,7 @@ struct FrutasView: View {
                     .opacity(0.5)
                 
                 ZStack{
-                    Rectangle()
-                        .fill(.pink)
+                    Image(ganhador == "Vó Ana" ? "creditosBg": "insBg")
                         .frame(
                             width: 444,
                             height: 268
@@ -189,18 +188,34 @@ struct FrutasView: View {
                         HStack{
                             Image(ganhador == "Vó Ana" ? "senhora_um_circulo" : "senhora_dois_circulo")
                             
-                            VStack(){
+                            VStack(spacing: 12){
                                 Text("Vencedora!")
+                                    .font(Font.custom("dogica pixel", size: 20))
+                                    .foregroundColor(.white)
+                                    .bold()
                                 
                                 Text("Sra. \(ganhador == "Vó Ana" ? "Ana" : "Zélia") conquistou o amor do pombo pelo seu estômago")
+                                    .lineSpacing(2)
                                     .multilineTextAlignment(.center)
+                                    .foregroundColor(.white)
+                                    .font(Font.custom("dogica pixel", size: 12))
+                                    
                             }
                         }
                         
                         Button{
                             dismiss()
                         } label: {
-                            Text("voltar para o início")
+                            VStack(spacing: 0){
+                                Text("voltar para o início")
+                                    .font(Font.custom("dogica pixel", size: 14))
+                                    .foregroundColor(.white)
+                                    .bold()
+                                Rectangle()
+                                    .fill(.white)
+                                    .frame(width: 250, height: 2)
+                                    .padding(.top, -4)
+                            }
                         }
                         
                            
