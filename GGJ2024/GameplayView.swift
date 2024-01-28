@@ -22,6 +22,7 @@ struct GameplayView: View {
             )
             .background(.blue)
             .onAppear() {
+                SoundManager.instance.playLoop(sound: .background, volume: 0.5)
                 controladorDeFrutas.selecionarFrutaDaRodada()
                 controladorDeFrutas.embaralharFrutas()
             }

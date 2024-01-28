@@ -175,6 +175,7 @@ struct FrutasView: View {
                 
                 
                 if !frutas.isEmpty && acabou == false {
+                    SoundManager.instance.playSound(sound: .ploc)
                     let fruta = frutas.popLast()
                     
                     frutasAparecer.append(fruta ?? "")
