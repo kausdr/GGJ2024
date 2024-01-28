@@ -28,6 +28,9 @@ struct FrutasView: View {
     
     @State var endGame = false
     
+    @State private var showRound = false
+    @State private var roundCount = 0
+    
     // Screen size
     let screenWidth = UIScreen.main.bounds.width-400
     let screenHeight = UIScreen.main.bounds.height
@@ -38,8 +41,8 @@ struct FrutasView: View {
     let timerAnimation = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
     @State private var isPaused = 0
     
-    private let defInterval = 6
-    @State private var intervalBetweenRounds = 0
+    private let defInterval = 4
+    @State private var intervalBetweenRounds = 3
     
     // Animation related
     @State private var currentPigeon: String = "pombo_normal_00"
@@ -55,6 +58,7 @@ struct FrutasView: View {
     
     // Sound related
     @State private var triggerErrorSound = false
+    
     
     
     var body: some View {
@@ -165,6 +169,18 @@ struct FrutasView: View {
             }
             .ignoresSafeArea()
             
+            if showRound {
+                Group{
+                    Image("round_cinza")
+                    
+                    Text("round \(roundCount)")
+                        .foregroundColor(.white)
+                        .font(.custom("dogica pixel", size: 14))
+                        .bold()
+                }
+                .offset(x: -20)
+            }
+            
             if endGame  {
                 
                 
@@ -256,9 +272,13 @@ struct FrutasView: View {
 
                 }
                 intervalBetweenRounds -= 1
+                if intervalBetweenRounds == 1 {
+                    roundCount += 1
+                    showRound = true
+                }
                 if intervalBetweenRounds == 0 { setupGame() }
             } else {
-                
+                showRound = false
                 if !frutas.isEmpty && !endGame {
                     let fruta = frutas.popLast()
                     frutasAparecer.append(fruta ?? "")
@@ -301,7 +321,7 @@ struct FrutasView: View {
     
     private func pigeonAnimation(){
         
-        if intervalBetweenRounds == 0 {
+        if intervalBetweenRounds == 0 || ganhador == "" {
             pombos_normais_index+=1
             if pombos_normais_index >= pombos_normais.count {
                 pombos_normais_index = 0
