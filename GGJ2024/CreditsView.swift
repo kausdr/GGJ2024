@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CreditsView: View {
+    @Binding var creditos: Bool
     var body: some View {
         ZStack{
             Color(.black)
@@ -19,7 +20,7 @@ struct CreditsView: View {
                 Image("creditosBg")
                 VStack {
                     Button {
-                        
+                        creditos = false
                     } label: {
                         Image("x")
                     }
@@ -69,6 +70,6 @@ struct CreditsView: View {
     }
 }
 
-#Preview {
-    CreditsView()
-}
+//#Preview {
+//    CreditsView()
+//}
