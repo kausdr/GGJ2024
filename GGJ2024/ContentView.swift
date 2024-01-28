@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State var creditos: Bool = false
     @State private var botaoJogar = false
     
     var body: some View {
@@ -55,13 +56,22 @@ struct ContentView: View {
                             Image("botao_instrucoes")
                         }
                         
-                        NavigationLink(destination: CreditsView()){
+                        Button {
+                            creditos.toggle()
+                        } label: {
                             Image("botao_creditos")
                         }
                     }
                 }
                 .padding(.horizontal, 55)
             }
+        }
+        .overlay {
+            if creditos {
+                CreditsView()
+            }
+            
+            
         }
         
     }
