@@ -12,16 +12,30 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack{
-            NavigationLink(destination: GameplayView()){
-                Text("Jogar")
-            }
             
-            NavigationLink(destination: InstructionsView()){
-                Text("Instruções")
-            }
-            
-            NavigationLink(destination: CreditsView()){
-                Text("Créditos")
+            ZStack{
+                
+                BackgroundView()
+                
+                HStack{
+                    
+                    Spacer()
+                    
+                    VStack(spacing: 20){
+                        NavigationLink(destination: GameplayView()){
+                            Image("botao_jogar")
+                        }
+                        
+                        NavigationLink(destination: InstructionsView()){
+                            Image("botao_instrucoes")
+                        }
+                        
+                        NavigationLink(destination: CreditsView()){
+                            Image("botao_creditos")
+                        }
+                    }
+                }
+                .padding(.horizontal, 55)
             }
         }
         
