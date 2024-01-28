@@ -11,14 +11,20 @@ struct BackgroundView: View {
     var body: some View {
         ZStack {
             Text("background com a pombaaa")
-            Image("praca")
+            Image("background")
                 .resizable()
-//                .aspectRatio(contentMode: .fill)
+//                .frame(width:633, height: 291)
+                .aspectRatio(contentMode: .fill)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .ignoresSafeArea()
-            Image("pombo")
-                .resizable()
+            
+//            Image(.pombo01)
+//                .resizable()
+//                .frame(width:204, height: 231)
+//                .offset(y: 10)
+//                .imageScale(/*@START_MENU_TOKEN@*/.medium/*@END_MENU_TOKEN@*/)
 //                .aspectRatio(contentMode: .fill)
-                .padding(48)
+//                .padding(48)
             
         }
     }

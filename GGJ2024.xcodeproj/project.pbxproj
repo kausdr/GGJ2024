@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A364AE72B668E38004717F7 /* dogicabold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A364AE22B668C83004717F7 /* dogicabold.ttf */; };
+		5A364AE82B668E3A004717F7 /* dogica.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A364AE32B668C83004717F7 /* dogica.ttf */; };
+		5A364AE92B668EBA004717F7 /* dogicapixel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A364AE52B668C83004717F7 /* dogicapixel.ttf */; };
+		5A364AEA2B668EBC004717F7 /* dogicapixelbold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A364AE42B668C83004717F7 /* dogicapixelbold.ttf */; };
 		5A82621D2B64B7B2002862C9 /* controladorDeFrutas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A82621C2B64B7B2002862C9 /* controladorDeFrutas.swift */; };
 		5A8262252B64F5C7002862C9 /* GameplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8262242B64F5C7002862C9 /* GameplayView.swift */; };
 		5A8262272B64F70C002862C9 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8262262B64F70C002862C9 /* WinnerView.swift */; };
@@ -16,9 +20,25 @@
 		5AE7A6DD2B64A56B00A022A6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AE7A6DC2B64A56B00A022A6 /* Preview Assets.xcassets */; };
 		5AE7A6E42B64A9FB00A022A6 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE7A6E32B64A9FB00A022A6 /* BackgroundView.swift */; };
 		5AE7A6E62B64AA0400A022A6 /* FrutasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE7A6E52B64AA0400A022A6 /* FrutasView.swift */; };
+		A76BFA6E2B659C2D00A16D5C /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76BFA6D2B659C2D00A16D5C /* InstructionsView.swift */; };
+		A76BFA702B659E6100A16D5C /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76BFA6F2B659E6100A16D5C /* CreditsView.swift */; };
+		A76BFA732B65A5B600A16D5C /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76BFA722B65A5B600A16D5C /* SoundManager.swift */; };
+		A76BFA782B65AF9F00A16D5C /* pruu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A76BFA772B65AF9F00A16D5C /* pruu.mp3 */; };
+		A76BFA7A2B65B2FF00A16D5C /* FrutaErrada.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A76BFA792B65B2FF00A16D5C /* FrutaErrada.mp3 */; };
+		A76BFA7C2B65B30500A16D5C /* FrutaCerta.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A76BFA7B2B65B30500A16D5C /* FrutaCerta.mp3 */; };
+		A76BFA812B65BC4D00A16D5C /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76BFA802B65BC4D00A16D5C /* Images.swift */; };
+		A76BFA852B65EC9100A16D5C /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A76BFA832B65EC9100A16D5C /* background.mp3 */; };
+		A76BFA872B65EE4500A16D5C /* ploc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A76BFA862B65EE4500A16D5C /* ploc.mp3 */; };
+		A76BFA8A2B66823E00A16D5C /* botao1Menu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A76BFA882B66823E00A16D5C /* botao1Menu.mp3 */; };
+		A76BFA8B2B66823E00A16D5C /* botao2Menu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A76BFA892B66823E00A16D5C /* botao2Menu.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A364AE22B668C83004717F7 /* dogicabold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dogicabold.ttf; sourceTree = "<group>"; };
+		5A364AE32B668C83004717F7 /* dogica.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dogica.ttf; sourceTree = "<group>"; };
+		5A364AE42B668C83004717F7 /* dogicapixelbold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dogicapixelbold.ttf; sourceTree = "<group>"; };
+		5A364AE52B668C83004717F7 /* dogicapixel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dogicapixel.ttf; sourceTree = "<group>"; };
+		5A364AE62B668CB5004717F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5A82621C2B64B7B2002862C9 /* controladorDeFrutas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = controladorDeFrutas.swift; sourceTree = "<group>"; };
 		5A8262242B64F5C7002862C9 /* GameplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayView.swift; sourceTree = "<group>"; };
 		5A8262262B64F70C002862C9 /* WinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerView.swift; sourceTree = "<group>"; };
@@ -29,6 +49,17 @@
 		5AE7A6DC2B64A56B00A022A6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5AE7A6E32B64A9FB00A022A6 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		5AE7A6E52B64AA0400A022A6 /* FrutasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrutasView.swift; sourceTree = "<group>"; };
+		A76BFA6D2B659C2D00A16D5C /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
+		A76BFA6F2B659E6100A16D5C /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
+		A76BFA722B65A5B600A16D5C /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		A76BFA772B65AF9F00A16D5C /* pruu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pruu.mp3; sourceTree = "<group>"; };
+		A76BFA792B65B2FF00A16D5C /* FrutaErrada.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FrutaErrada.mp3; sourceTree = "<group>"; };
+		A76BFA7B2B65B30500A16D5C /* FrutaCerta.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FrutaCerta.mp3; sourceTree = "<group>"; };
+		A76BFA802B65BC4D00A16D5C /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		A76BFA832B65EC9100A16D5C /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background.mp3; sourceTree = "<group>"; };
+		A76BFA862B65EE4500A16D5C /* ploc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ploc.mp3; sourceTree = "<group>"; };
+		A76BFA882B66823E00A16D5C /* botao1Menu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = botao1Menu.mp3; sourceTree = "<group>"; };
+		A76BFA892B66823E00A16D5C /* botao2Menu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = botao2Menu.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +73,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A364AE12B668C7B004717F7 /* Fontes */ = {
+			isa = PBXGroup;
+			children = (
+				5A364AE32B668C83004717F7 /* dogica.ttf */,
+				5A364AE22B668C83004717F7 /* dogicabold.ttf */,
+				5A364AE52B668C83004717F7 /* dogicapixel.ttf */,
+				5A364AE42B668C83004717F7 /* dogicapixelbold.ttf */,
+			);
+			path = Fontes;
+			sourceTree = "<group>";
+		};
 		5AE7A6C92B64A56A00A022A6 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +103,11 @@
 		5AE7A6D42B64A56A00A022A6 /* GGJ2024 */ = {
 			isa = PBXGroup;
 			children = (
+				5A364AE62B668CB5004717F7 /* Info.plist */,
+				5A364AE12B668C7B004717F7 /* Fontes */,
+				A76BFA7F2B65BC3800A16D5C /* Helpers */,
+				A76BFA742B65AF6A00A16D5C /* Sounds */,
+				A76BFA712B65A5A800A16D5C /* Managers */,
 				5AE7A6D52B64A56A00A022A6 /* GGJ2024App.swift */,
 				5AE7A6D72B64A56A00A022A6 /* ContentView.swift */,
 				5A8262262B64F70C002862C9 /* WinnerView.swift */,
@@ -68,6 +115,8 @@
 				5AE7A6E32B64A9FB00A022A6 /* BackgroundView.swift */,
 				5AE7A6E52B64AA0400A022A6 /* FrutasView.swift */,
 				5A82621C2B64B7B2002862C9 /* controladorDeFrutas.swift */,
+				A76BFA6D2B659C2D00A16D5C /* InstructionsView.swift */,
+				A76BFA6F2B659E6100A16D5C /* CreditsView.swift */,
 				5AE7A6D92B64A56B00A022A6 /* Assets.xcassets */,
 				5AE7A6DB2B64A56B00A022A6 /* Preview Content */,
 			);
@@ -80,6 +129,36 @@
 				5AE7A6DC2B64A56B00A022A6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A76BFA712B65A5A800A16D5C /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A76BFA722B65A5B600A16D5C /* SoundManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		A76BFA742B65AF6A00A16D5C /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				A76BFA882B66823E00A16D5C /* botao1Menu.mp3 */,
+				A76BFA892B66823E00A16D5C /* botao2Menu.mp3 */,
+				A76BFA862B65EE4500A16D5C /* ploc.mp3 */,
+				A76BFA832B65EC9100A16D5C /* background.mp3 */,
+				A76BFA7B2B65B30500A16D5C /* FrutaCerta.mp3 */,
+				A76BFA792B65B2FF00A16D5C /* FrutaErrada.mp3 */,
+				A76BFA772B65AF9F00A16D5C /* pruu.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		A76BFA7F2B65BC3800A16D5C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A76BFA802B65BC4D00A16D5C /* Images.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +220,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AE7A6DD2B64A56B00A022A6 /* Preview Assets.xcassets in Resources */,
+				A76BFA852B65EC9100A16D5C /* background.mp3 in Resources */,
+				5A364AE72B668E38004717F7 /* dogicabold.ttf in Resources */,
+				A76BFA872B65EE4500A16D5C /* ploc.mp3 in Resources */,
 				5AE7A6DA2B64A56B00A022A6 /* Assets.xcassets in Resources */,
+				5A364AEA2B668EBC004717F7 /* dogicapixelbold.ttf in Resources */,
+				A76BFA7C2B65B30500A16D5C /* FrutaCerta.mp3 in Resources */,
+				A76BFA7A2B65B2FF00A16D5C /* FrutaErrada.mp3 in Resources */,
+				5A364AE82B668E3A004717F7 /* dogica.ttf in Resources */,
+				5A364AE92B668EBA004717F7 /* dogicapixel.ttf in Resources */,
+				A76BFA782B65AF9F00A16D5C /* pruu.mp3 in Resources */,
+				A76BFA8A2B66823E00A16D5C /* botao1Menu.mp3 in Resources */,
+				A76BFA8B2B66823E00A16D5C /* botao2Menu.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,12 +243,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A8262252B64F5C7002862C9 /* GameplayView.swift in Sources */,
+				A76BFA6E2B659C2D00A16D5C /* InstructionsView.swift in Sources */,
 				5A8262272B64F70C002862C9 /* WinnerView.swift in Sources */,
+				A76BFA812B65BC4D00A16D5C /* Images.swift in Sources */,
 				5A82621D2B64B7B2002862C9 /* controladorDeFrutas.swift in Sources */,
 				5AE7A6E42B64A9FB00A022A6 /* BackgroundView.swift in Sources */,
 				5AE7A6D82B64A56A00A022A6 /* ContentView.swift in Sources */,
+				A76BFA702B659E6100A16D5C /* CreditsView.swift in Sources */,
 				5AE7A6D62B64A56A00A022A6 /* GGJ2024App.swift in Sources */,
 				5AE7A6E62B64AA0400A022A6 /* FrutasView.swift in Sources */,
+				A76BFA732B65A5B600A16D5C /* SoundManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +389,8 @@
 				DEVELOPMENT_TEAM = N5DJJCAK38;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GGJ2024/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Feed the Pigeon!";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -307,9 +403,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = KauaneS.GGJ2024;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -324,6 +424,8 @@
 				DEVELOPMENT_TEAM = N5DJJCAK38;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GGJ2024/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Feed the Pigeon!";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -336,9 +438,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = KauaneS.GGJ2024;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

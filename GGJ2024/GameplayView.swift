@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct GameplayView: View {
-    @EnvironmentObject var controladorDeFrutas: ControladorDeFrutas
     
     var body: some View {
         NavigationStack{
@@ -20,11 +19,6 @@ struct GameplayView: View {
                 maxWidth: .infinity,
                 maxHeight: .infinity
             )
-            .background(.blue)
-            .onAppear() {
-                controladorDeFrutas.selecionarFrutaDaRodada()
-                controladorDeFrutas.embaralharFrutas()
-            }
         }
         .navigationBarBackButtonHidden()
     }
