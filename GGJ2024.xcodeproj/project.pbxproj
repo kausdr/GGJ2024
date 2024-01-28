@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A364AE72B668E38004717F7 /* dogicabold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A364AE22B668C83004717F7 /* dogicabold.ttf */; };
+		5A364AE82B668E3A004717F7 /* dogica.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A364AE32B668C83004717F7 /* dogica.ttf */; };
+		5A364AE92B668EBA004717F7 /* dogicapixel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A364AE52B668C83004717F7 /* dogicapixel.ttf */; };
+		5A364AEA2B668EBC004717F7 /* dogicapixelbold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A364AE42B668C83004717F7 /* dogicapixelbold.ttf */; };
 		5A82621D2B64B7B2002862C9 /* controladorDeFrutas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A82621C2B64B7B2002862C9 /* controladorDeFrutas.swift */; };
 		5A8262252B64F5C7002862C9 /* GameplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8262242B64F5C7002862C9 /* GameplayView.swift */; };
 		5A8262272B64F70C002862C9 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8262262B64F70C002862C9 /* WinnerView.swift */; };
@@ -28,6 +32,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A364AE22B668C83004717F7 /* dogicabold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dogicabold.ttf; sourceTree = "<group>"; };
+		5A364AE32B668C83004717F7 /* dogica.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dogica.ttf; sourceTree = "<group>"; };
+		5A364AE42B668C83004717F7 /* dogicapixelbold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dogicapixelbold.ttf; sourceTree = "<group>"; };
+		5A364AE52B668C83004717F7 /* dogicapixel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dogicapixel.ttf; sourceTree = "<group>"; };
+		5A364AE62B668CB5004717F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5A82621C2B64B7B2002862C9 /* controladorDeFrutas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = controladorDeFrutas.swift; sourceTree = "<group>"; };
 		5A8262242B64F5C7002862C9 /* GameplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayView.swift; sourceTree = "<group>"; };
 		5A8262262B64F70C002862C9 /* WinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerView.swift; sourceTree = "<group>"; };
@@ -60,6 +69,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A364AE12B668C7B004717F7 /* Fontes */ = {
+			isa = PBXGroup;
+			children = (
+				5A364AE32B668C83004717F7 /* dogica.ttf */,
+				5A364AE22B668C83004717F7 /* dogicabold.ttf */,
+				5A364AE52B668C83004717F7 /* dogicapixel.ttf */,
+				5A364AE42B668C83004717F7 /* dogicapixelbold.ttf */,
+			);
+			path = Fontes;
+			sourceTree = "<group>";
+		};
 		5AE7A6C92B64A56A00A022A6 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +99,8 @@
 		5AE7A6D42B64A56A00A022A6 /* GGJ2024 */ = {
 			isa = PBXGroup;
 			children = (
+				5A364AE62B668CB5004717F7 /* Info.plist */,
+				5A364AE12B668C7B004717F7 /* Fontes */,
 				A76BFA7F2B65BC3800A16D5C /* Helpers */,
 				A76BFA742B65AF6A00A16D5C /* Sounds */,
 				A76BFA712B65A5A800A16D5C /* Managers */,
@@ -193,10 +215,14 @@
 			files = (
 				5AE7A6DD2B64A56B00A022A6 /* Preview Assets.xcassets in Resources */,
 				A76BFA852B65EC9100A16D5C /* background.mp3 in Resources */,
+				5A364AE72B668E38004717F7 /* dogicabold.ttf in Resources */,
 				A76BFA872B65EE4500A16D5C /* ploc.mp3 in Resources */,
 				5AE7A6DA2B64A56B00A022A6 /* Assets.xcassets in Resources */,
+				5A364AEA2B668EBC004717F7 /* dogicapixelbold.ttf in Resources */,
 				A76BFA7C2B65B30500A16D5C /* FrutaCerta.mp3 in Resources */,
 				A76BFA7A2B65B2FF00A16D5C /* FrutaErrada.mp3 in Resources */,
+				5A364AE82B668E3A004717F7 /* dogica.ttf in Resources */,
+				5A364AE92B668EBA004717F7 /* dogicapixel.ttf in Resources */,
 				A76BFA782B65AF9F00A16D5C /* pruu.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,6 +381,7 @@
 				DEVELOPMENT_TEAM = N5DJJCAK38;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GGJ2024/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -384,6 +411,7 @@
 				DEVELOPMENT_TEAM = N5DJJCAK38;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GGJ2024/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

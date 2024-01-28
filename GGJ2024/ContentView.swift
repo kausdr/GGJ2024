@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @State var creditos: Bool = false
     
     var body: some View {
         NavigationStack{
@@ -20,9 +20,22 @@ struct ContentView: View {
                 Text("Instruções")
             }
             
-            NavigationLink(destination: CreditsView()){
+//            NavigationLink(destination: CreditsView()){
+//                Text("Créditos")
+//            }
+            
+            Button {
+                creditos.toggle()
+            } label: {
                 Text("Créditos")
             }
+        }
+        .overlay {
+            if creditos {
+                CreditsView()
+            }
+            
+            
         }
         
     }
