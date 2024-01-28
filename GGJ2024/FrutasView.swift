@@ -177,18 +177,42 @@ struct FrutasView: View {
                     .ignoresSafeArea()
                     .opacity(0.5)
                 
-                
-                VStack{
-                    Text("\(ganhador) ganhou!!! ihulll")
-                    Button{
-                        dismiss()
-                    } label: {
-                        Text("Voltar ao inicio")
+                ZStack{
+                    Rectangle()
+                        .fill(.pink)
+                        .frame(
+                            width: 444,
+                            height: 268
+                        )
+                    
+                    VStack(spacing: 20){
+                        HStack{
+                            Image(ganhador == "Vó Ana" ? "senhora_um_circulo" : "senhora_dois_circulo")
+                            
+                            VStack(){
+                                Text("Vencedora!")
+                                
+                                Text("Sra. \(ganhador == "Vó Ana" ? "Ana" : "Zélia") conquistou o amor do pombo pelo seu estômago")
+                                    .multilineTextAlignment(.center)
+                            }
+                        }
+                        
+                        Button{
+                            dismiss()
+                        } label: {
+                            Text("voltar para o início")
+                        }
+                        
+                           
                     }
+                    .padding(35)
+                    .frame(
+                        width: 444,
+                        height: 268
+                    )
+                    
                 }
-                .padding(40)
-                .background(.red)
-                .cornerRadius(30)
+                
             }
             
             

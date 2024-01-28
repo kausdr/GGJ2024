@@ -8,26 +8,62 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @State var creditos: Bool = false
+    @State private var botaoJogar = false
     
     var body: some View {
         NavigationStack{
-            NavigationLink(destination: GameplayView()){
-                Text("Jogar")
+            
+            NavigationLink(destination: GameplayView(), isActive: $botaoJogar) {
+                EmptyView()
             }
             
-            NavigationLink(destination: InstructionsView()){
-                Text("Instruções")
-            }
-            
-//            NavigationLink(destination: CreditsView()){
-//                Text("Créditos")
-//            }
-            
-            Button {
-                creditos.toggle()
-            } label: {
-                Text("Créditos")
+            ZStack{
+                
+                BackgroundView()
+                
+                HStack(alignment: .bottom){
+                    VStack{
+                        Image("logo_pigeon")
+                        Spacer()
+                    }
+                    Spacer()
+                }
+                .padding(.top, 60)
+                .padding(.horizontal, 55)
+                    
+                
+                Image("pombo_inicio")
+                    .resizable()
+                    .frame(width:274, height: 301)
+                    .offset(x: -20,y: 15)
+                
+                HStack{
+                    
+                    Spacer()
+                    
+                    VStack(spacing: 20){
+                        
+                        Button {
+                            SoundManager.instance.playSound(sound: .botao1Menu)
+                            botaoJogar = true
+                        } label: {
+                            Image("botao_jogar")
+                        }
+                        
+                        NavigationLink(destination: InstructionsView()){
+                            Image("botao_instrucoes")
+                        }
+                        
+                        Button {
+                            creditos.toggle()
+                        } label: {
+                            Image("botao_creditos")
+                        }
+                    }
+                }
+                .padding(.horizontal, 55)
             }
         }
         .overlay {

@@ -14,6 +14,8 @@ class SoundManager {
         case FrutaErrada
         case ploc
         case background
+        case botao1Menu
+        case botao2Menu
     }
     
     func playSound(sound: SoundOption) {
@@ -48,7 +50,7 @@ class SoundManager {
            switch sound {
            case .background:
                background?.stop()
-           case .FrutaCerta, .FrutaErrada, .ploc:
+           case .FrutaCerta, .FrutaErrada, .ploc, .botao1Menu, .botao2Menu:
                player?.stop()
            }
        }
