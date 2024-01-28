@@ -15,7 +15,9 @@ struct BackgroundView: View {
                 .resizable()
 //                .frame(width:633, height: 291)
                 .aspectRatio(contentMode: .fill)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .ignoresSafeArea()
+            
 //            Image(.pombo01)
 //                .resizable()
 //                .frame(width:204, height: 231)
