@@ -33,16 +33,32 @@ struct FrutasView: View {
     
     @State private var isPaused = 0
     
+    @State private var currentPigeon: String = "pombo_normal_00"
+    
+    @State private var pombos_normais_index = 0
+    private let pombos_normais = ["pombo_normal_00", "pombo_normal_01", "pombo_normal_00", "pombo_normal_02", "pombo_normal_00", "pombo_normal_03"]
+    
+    @State private var pombos_ganhador_index = 0
+    private let pombos_player2 = ["pombo_coracao_direita", "pombo_coracao_baixo"]
+    private let pombos_player1 = ["pombo_coracao_esquerda", "pombo_coracao_baixo"]
+    
+    @State private var ganhadorTemp = 1
+    
+    
     
     var body: some View {
     
         ZStack {
             
+            Image(currentPigeon)
+                .resizable()
+                .frame(width:204, height: 231)
+                .offset(y: 10)
+            
+            
             ForEach(frutasAparecer.indices, id: \.self) { index in
                 ZStack {
-                    Text("\(frutasAparecer[index])")
-                        .font(.system(size: 50))
-                        .opacity(1)
+                    Image(frutasAparecer[index])
                         .offset(
                             x: imageOffsets[index].x,
                             y: imageOffsets[index].y
@@ -61,7 +77,7 @@ struct FrutasView: View {
                     Button{
                         verificarAperto(score: &player1, playerName: "Vó Ana")
                     } label: {
-                        Text(frutaDaRodada)
+                        Image(frutaDaRodada)
                             .font(.system(size: 50))
                             .frame(width: 100, height: 100)
                             .background(.red)
@@ -81,7 +97,7 @@ struct FrutasView: View {
                     Button{
                         verificarAperto(score: &player2, playerName: "Vó Zélia")
                     } label: {
-                        Text(frutaDaRodada)
+                        Image(frutaDaRodada)
                             .font(.system(size: 50))
                             .frame(width: 100, height: 100)
                             .background(.red)
@@ -148,8 +164,16 @@ struct FrutasView: View {
         }
         
         .onReceive(timer) { _ in
-            
+                  
             if isPaused == 0 {
+                
+                pombos_normais_index+=1
+                if pombos_normais_index >= pombos_normais.count {
+                    pombos_normais_index = 0
+                }
+                currentPigeon = pombos_normais[pombos_normais_index]
+                
+                
                 if !frutas.isEmpty && acabou == false {
                     let fruta = frutas.popLast()
                     
@@ -161,6 +185,20 @@ struct FrutasView: View {
                     }
                 }
             } else {
+                
+                pombos_ganhador_index+=1
+                if pombos_ganhador_index >= 2 {
+                    pombos_ganhador_index = 0
+                }
+                
+                if ganhador == "Vó Ana" {
+                    currentPigeon = pombos_player1[pombos_ganhador_index]
+                } else {
+                    currentPigeon = pombos_player2[pombos_ganhador_index]
+                }
+                
+                
+                
                 isPaused-=1
                 
                 if isPaused == 0 { reset = true }
@@ -175,10 +213,11 @@ struct FrutasView: View {
         if controladorDeFrutas.getIsOn() == true {
             acerto()
             score += 1
+            ganhador = playerName
             
             verificarGanhador(score: score, name: playerName)
             resetarFrutas()
-            isPaused = 3
+            isPaused = 5
             
 
             
