@@ -25,6 +25,8 @@
 		A76BFA812B65BC4D00A16D5C /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76BFA802B65BC4D00A16D5C /* Images.swift */; };
 		A76BFA852B65EC9100A16D5C /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A76BFA832B65EC9100A16D5C /* background.mp3 */; };
 		A76BFA872B65EE4500A16D5C /* ploc.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A76BFA862B65EE4500A16D5C /* ploc.mp3 */; };
+		A76BFA8A2B66823E00A16D5C /* botao1Menu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A76BFA882B66823E00A16D5C /* botao1Menu.mp3 */; };
+		A76BFA8B2B66823E00A16D5C /* botao2Menu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A76BFA892B66823E00A16D5C /* botao2Menu.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		A76BFA802B65BC4D00A16D5C /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		A76BFA832B65EC9100A16D5C /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background.mp3; sourceTree = "<group>"; };
 		A76BFA862B65EE4500A16D5C /* ploc.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ploc.mp3; sourceTree = "<group>"; };
+		A76BFA882B66823E00A16D5C /* botao1Menu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = botao1Menu.mp3; sourceTree = "<group>"; };
+		A76BFA892B66823E00A16D5C /* botao2Menu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = botao2Menu.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,8 @@
 		A76BFA742B65AF6A00A16D5C /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				A76BFA882B66823E00A16D5C /* botao1Menu.mp3 */,
+				A76BFA892B66823E00A16D5C /* botao2Menu.mp3 */,
 				A76BFA862B65EE4500A16D5C /* ploc.mp3 */,
 				A76BFA832B65EC9100A16D5C /* background.mp3 */,
 				A76BFA7B2B65B30500A16D5C /* FrutaCerta.mp3 */,
@@ -198,6 +204,8 @@
 				A76BFA7C2B65B30500A16D5C /* FrutaCerta.mp3 in Resources */,
 				A76BFA7A2B65B2FF00A16D5C /* FrutaErrada.mp3 in Resources */,
 				A76BFA782B65AF9F00A16D5C /* pruu.mp3 in Resources */,
+				A76BFA8A2B66823E00A16D5C /* botao1Menu.mp3 in Resources */,
+				A76BFA8B2B66823E00A16D5C /* botao2Menu.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
